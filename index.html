@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopNow — Loja Online</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ░░░ PÁGINA: LOGIN ░░░ -->
+    <div id="page-login" class="page active">
+        <div class="auth-wrapper">
+            <div class="auth-visual">
+                <div class="auth-visual-emoji">🛍️</div>
+                <div class="auth-visual-title">Bem-vindo de volta!</div>
+                <p>Acesse sua conta e continue explorando os melhores produtos com os melhores preços.</p>
+            </div>
+            <div class="auth-form-area">
+                <div class="auth-card">
+                    <h2>Entrar</h2>
+                    <p class="subtitle">Acesse sua conta ShopNow</p>
+
+                    <div class="field">
+                        <label>E-MAIL</label>
+                        <input type="email" id="login-email" placeholder="seu@email.com" />
+                    </div>
+                    <div class="field">
+                        <label>SENHA</label>
+                        <input type="password" id="login-pass" placeholder="••••••••" />
+                    </div>
+                    <button class="btn-primary" onclick="fazerLogin()">Entrar na conta</button>
+
+                    <div class="divider"><span>ou</span></div>
+
+                    <p class="auth-switch">
+                        Não tem conta? <a onclick="goTo('page-register')">Criar conta grátis</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ░░░ PÁGINA: CADASTRO ░░░ -->
+    <div id="page-register" class="page">
+        <div class="auth-wrapper">
+            <div class="auth-visual">
+                <div class="auth-visual-emoji">✨</div>
+                <div class="auth-visual-title">Crie sua conta</div>
+                <p>Junte-se a milhares de compradores e aproveite ofertas exclusivas todos os dias.</p>
+            </div>
+            <div class="auth-form-area">
+                <div class="auth-card">
+                    <h2>Cadastrar</h2>
+                    <p class="subtitle">Crie sua conta gratuitamente</p>
+
+                    <div class="field">
+                        <label>NOME COMPLETO</label>
+                        <input type="text" id="reg-nome" placeholder="João da Silva" />
+                    </div>
+                    <div class="field">
+                        <label>E-MAIL</label>
+                        <input type="email" id="reg-email" placeholder="seu@email.com" />
+                    </div>
+                    <div class="field">
+                        <label>SENHA</label>
+                        <input type="password" id="reg-pass" placeholder="Mínimo 6 caracteres" />
+                    </div>
+                    <div class="field">
+                        <label>CONFIRMAR SENHA</label>
+                        <input type="password" id="reg-pass2" placeholder="Repita a senha" />
+                    </div>
+                    <button class="btn-primary" onclick="fazerCadastro()">Criar conta</button>
+
+                    <p class="auth-switch" style="margin-top:1rem;">
+                        Já tem conta? <a onclick="goTo('page-login')">Fazer login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ░░░ PÁGINA: HOME ░░░ -->
+    <div id="page-home" class="page">
+        <nav>
+            <div class="logo" onclick="goTo('page-home')">ShopNow</div>
+            <div class="nav-links">
+                <a href="#">Produtos</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Sobre</a>
+                <div class="cart-icon" onclick="showToast('🛒 Carrinho em breve!')">
+                    🛒 <span class="cart-badge" id="cart-count">0</span>
+                </div>
+                <button class="nav-btn" onclick="sair()">Sair</button>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <h1>Compre o que há de <span>melhor</span> online</h1>
+            <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja favorita, 24h por dia.
+            </p>
+            <div class="hero-btns">
+                <button class="btn-hero">Ver produtos</button>
+                <button class="btn-outline">Nossas ofertas</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Categorias</div>
+            <p class="section-sub">Encontre o que procura rapidamente</p>
+            <div class="cats-grid">
+                <div class="cat-card">
+                    <div class="cat-icon">📱</div>
+                    <div class="cat-name">Eletrônicos</div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon">👗</div>
+                    <div class="cat-name">Moda</div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon">🏠</div>
+                    <div class="cat-name">Casa</div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon">📚</div>
+                    <div class="cat-name">Livros</div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon">⚽</div>
+                    <div class="cat-name">Esportes</div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-icon">🎮</div>
+                    <div class="cat-name">Games</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="padding-top:0">
+            <div class="section-title">Destaques</div>
+            <p class="section-sub">Os mais vendidos desta semana</p>
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <div class="product-img">📱</div>
+                    <div class="product-info">
+                        <div class="product-name">Smartphone XPro</div>
+                        <div class="product-desc">Câmera 108MP, bateria de 5000mAh e tela AMOLED</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 1.299</span>
+                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">🎧</div>
+                    <div class="product-info">
+                        <div class="product-name">Fone Bluetooth</div>
+                        <div class="product-desc">Cancelamento de ruído ativo, 30h de bateria</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 349</span>
+                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">👟</div>
+                    <div class="product-info">
+                        <div class="product-name">Tênis Runner</div>
+                        <div class="product-desc">Solado amortecido, ideal para corridas longas</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 289</span>
+                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">💻</div>
+                    <div class="product-info">
+                        <div class="product-name">Notebook Ultra</div>
+                        <div class="product-desc">16GB RAM, SSD 512GB, processador i7</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 3.799</span>
+                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">⌚</div>
+                    <div class="product-info">
+                        <div class="product-name">Smartwatch Pro</div>
+                        <div class="product-desc">Monitor cardíaco, GPS e à prova d'água</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 699</span>
+                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">🎮</div>
+                    <div class="product-info">
+                        <div class="product-name">Controle Gamer</div>
+                        <div class="product-desc">Compatível com PC e consoles, vibração HD</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 199</span>
+                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="banner-text">
+                <h3>🔥 Frete grátis hoje!</h3>
+                <p>Em compras acima de R$ 150. Válido para todo o Brasil.</p>
+            </div>
+            <button class="btn-hero" onclick="showToast('✅ Cupom FRETE22 aplicado!')">Aproveitar agora</button>
+        </div>
+
+        <footer>
+            Feito com ❤️ · <span>ShopNow</span> © 2025 · Todos os direitos reservados
+        </footer>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
