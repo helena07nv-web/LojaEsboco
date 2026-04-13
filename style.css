@@ -282,3 +282,18 @@ footer span { color: var(--accent); }
   nav { padding: 1rem; }
   .banner { margin: 0 1rem 2.5rem; }
 }
+
+
+/* adicionando flex_centro para deixar os produtos alinhadose não embaixo do outro*/
+.flex_centro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cat-card {
+  width: 170px;
+  padding: 2rem 1.5rem;
+}
