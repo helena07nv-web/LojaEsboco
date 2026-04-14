@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShopNow — Loja Online</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" 
-        rel="stylesheet" />  <!-- IMPORTA AS LETRAS DO GOOGLE -->
-    <link rel="stylesheet" href="style.css" />
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" /> <!-- IMPORTA AS LETRAS DO GOOGLE -->
+    <link rel="stylesheet" href="style.css?v=2" />
 </head>
 
 <body>
@@ -100,39 +100,42 @@
             </div>
         </nav>
 
-        <div class="hero"> <!--AREA PRINCIPAL DO TOPO-->
-            <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1> <!--SPAN, IRA SERVIR PARA DESTACAR UM TEXTO-->
-            <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h por dia.
-            </p>
-            <div class="hero-btns"> <!--é a div que agrupa os dois botões dentro do hero-->
-                <button class="btn-hero">Ver produtos</button>
-                <button class="btn-outline">Nossas ofertas</button>
+        <div class="hero">
+            <img src="hero.jpg" alt="fundo" class="hero-bg" />
+            <div class="hero-content">
+                <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1>
+                <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h
+                    por dia.</p>
+                <div class="hero-btns">
+                    <button class="btn-hero">Ver produtos</button>
+                    <button class="btn-outline">Nossas ofertas</button>
+                </div>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">Categorias</div>
+        <div class="section categorias-section">
+            <div class="section-title">Categorias</div> <!--TITULO-->
             <p class="section-sub">Encontre o que procura rapidamente</p>
-            <div class="flex flex_centro">
+            <div class="cats-grid">
                 <div class="cat-card">
-                    <div class="cat-icon">📱</div>
-                    <div class="cat-name">Eletrônicos</div>
+                    <div class="cat-icon">👕</div>
+                    <div class="cat-name">Camisetas</div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-icon">👗</div>
-                    <div class="cat-name">Moda</div>
+                    <div class="cat-icon">🧥</div>
+                    <div class="cat-name">Moletons</div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-icon">🏠</div>
-                    <div class="cat-name">Casa</div>
+                    <div class="cat-icon">🖥️</div>
+                    <div class="cat-name">Programação</div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-icon">📚</div>
-                    <div class="cat-name">Livros</div>
+                    <div class="cat-icon">🐧</div>
+                    <div class="cat-name">Linux</div>
                 </div>
                 <div class="cat-card">
-                    <div class="cat-icon">⚽</div>
-                    <div class="cat-name">Esportes</div>
+                    <div class="cat-icon">🤖</div>
+                    <div class="cat-name">IA & Tech</div>
                 </div>
                 <div class="cat-card">
                     <div class="cat-icon">🎮</div>
@@ -143,76 +146,76 @@
 
         <div class="section" style="padding-top:0">
             <div class="section-title">Destaques</div>
-            <p class="section-sub">Os mais vendidos desta semana</p>
+            <p class="section-sub">Os mais vendidos da Loja</p>
             <div class="products-grid">
 
                 <div class="product-card">
-                    <div class="product-img">📱</div>
+                    <div class="product-img">👕</div>
                     <div class="product-info">
-                        <div class="product-name">Smartphone XPro</div>
-                        <div class="product-desc">Câmera 108MP, bateria de 5000mAh e tela AMOLED</div>
+                        <div class="product-name">Camiseta Hello World</div>
+                        <div class="product-desc">Estampa clássica de programação, 100% algodão</div>
                         <div class="product-footer">
-                            <span class="product-price">R$ 1.299</span>
+                            <span class="product-price">R$ 59</span>
                             <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img">🎧</div>
+                    <div class="product-img">🧥</div>
                     <div class="product-info">
-                        <div class="product-name">Fone Bluetooth</div>
-                        <div class="product-desc">Cancelamento de ruído ativo, 30h de bateria</div>
+                        <div class="product-name">Moletom GIT PUSH</div>
+                        <div class="product-desc">Moletom quentinho com estilo e qualidade</div>
                         <div class="product-footer">
-                            <span class="product-price">R$ 349</span>
+                            <span class="product-price">R$ 149</span>
                             <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img">👟</div>
+                    <div class="product-img">👕</div>
                     <div class="product-info">
-                        <div class="product-name">Tênis Runner</div>
-                        <div class="product-desc">Solado amortecido, ideal para corridas longas</div>
+                        <div class="product-name">Camiseta Bug Free</div>
+                        <div class="product-desc">Para quem sonha com código sem erros</div>
                         <div class="product-footer">
-                            <span class="product-price">R$ 289</span>
+                            <span class="product-price">R$ 64</span>
                             <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img">💻</div>
+                    <div class="product-img">🧥</div>
                     <div class="product-info">
-                        <div class="product-name">Notebook Ultra</div>
-                        <div class="product-desc">16GB RAM, SSD 512GB, processador i7</div>
+                        <div class="product-name">Moletom Stack Overflow</div>
+                        <div class="product-desc">Homenagem ao salvador de todo programador</div>
                         <div class="product-footer">
-                            <span class="product-price">R$ 3.799</span>
+                            <span class="product-price">R$ 170</span>
                             <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img">⌚</div>
+                    <div class="product-img">👕</div>
                     <div class="product-info">
-                        <div class="product-name">Smartwatch Pro</div>
-                        <div class="product-desc">Monitor cardíaco, GPS e à prova d'água</div>
+                        <div class="product-name">Sem backup, só Jesus salva</div>
+                        <div class="product-desc">Clássica para quem vive de risco no servidor</div>
                         <div class="product-footer">
-                            <span class="product-price">R$ 699</span>
+                            <span class="product-price">R$ 95</span>
                             <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img">🎮</div>
+                    <div class="product-img">👕</div>
                     <div class="product-info">
-                        <div class="product-name">Controle Gamer</div>
-                        <div class="product-desc">Compatível com PC e consoles, vibração HD</div>
+                        <div class="product-name">Deploy Primeiro, Reze Depois</div>
+                        <div class="product-desc">Para os corajosos que não testam em homologação</div>
                         <div class="product-footer">
-                            <span class="product-price">R$ 199</span>
+                            <span class="product-price">R$ 99</span>
                             <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
                         </div>
                     </div>
@@ -230,14 +233,12 @@
         </div>
 
         <footer>
-            Feito com ❤️ · <span>ShopNow</span> © 2025 · Todos os direitos reservados
+            Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
         </footer>
     </div>
 
-    <!-- TOAST -->
     <div id="toast"></div>
 
     <script src="script.js"></script>
 </body>
-
 </html>

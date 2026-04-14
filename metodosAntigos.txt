@@ -1,0 +1,217 @@
+De TI por aqui
+
+ <div class="hero"> <!--AREA PRINCIPAL DO TOPO-->
+            <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1> <!--SPAN, IRA SERVIR PARA DESTACAR UM TEXTO-->
+            <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h por dia.
+            </p>
+            <div class="hero-btns"> <!--é a div que agrupa os dois botões dentro do hero-->
+                <button class="btn-hero">Ver produtos</button>
+                <button class="btn-outline">Nossas ofertas</button>
+            </div>
+        </div>
+
+
+
+
+.hero {
+  background: linear-gradient(135deg, #111 0%, #1e1800 60%, #0d0d0d 100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center; position: relative; overflow: hidden;
+  /*mantem o que ja tem e adiciona(por conta da imagem no hero): */
+  padding-bottom: 5rem;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1; max-width: 700px; margin: 0 auto 1.5rem;
+}
+.hero h1 span { color: var(--accent); }
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── ADICIONANDO IMAGEM NO HERO ── */
+.hero-img {
+    width: 100%;
+    max-width: 650px;
+    margin-top: 2.5rem;
+    border-radius: 16px;
+    opacity: 0.85;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 40px rgba(232, 200, 114, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+A HERO DEPOIS DA IMAGEM:
+<div class="hero"> <!--AREA PRINCIPAL DO TOPO-->
+            <h1>Compre o que há de <span>melhor</span> de TI por Aqui.</h1> <!--SPAN, IRA SERVIR PARA DESTACAR UM TEXTO-->
+            <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h por dia.
+            </p>
+            <div class="hero-btns"> <!--é a div que agrupa os dois botões dentro do hero-->
+                <button class="btn-hero">Ver produtos</button>
+                <button class="btn-outline">Nossas ofertas</button>
+            </div>
+            <!-- IMAGEM DO HERO-->
+            <img src="hero.jpg.jpg" alt="Loja de roupas de TI" class="hero-img" />
+        </div>
+
+<div class="hero">
+                <!-- IMAGEM DE FUNDO -->
+                <img src="hero.jpg" alt="fundo" class="hero-bg" />
+
+                <!-- CONTEÚDO DO LADO ESQUERDO -->
+                <div class="hero-content">
+                    <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1>
+                    <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita,
+                        24h por dia.</p>
+                    <div class="hero-btns">
+                        <button class="btn-hero">Ver produtos</button>
+                        <button class="btn-outline">Nossas ofertas</button>
+                    </div>
+                </div>
+            </div>>
+
+            <div class="section">
+                <div class="section-title">Categorias</div>
+                <p class="section-sub">Encontre o que procura rapidamente</p>
+                <div class="flex flex_centro">
+                    <div class="cat-card">
+                        <div class="cat-icon">👕</div>
+                        <div class="cat-name">Camisetas</div>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🧥</div>
+                        <div class="cat-name">Moletons</div>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🖥️</div>
+                        <div class="cat-name">Programção</div>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🐧</div>
+                        <div class="cat-name">Linux</div>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🤖</div>
+                        <div class="cat-name">IA & Tech</div>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🎮</div>
+                        <div class="cat-name">Games</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" style="padding-top:0">
+                <div class="section-title">Destaques</div>
+                <p class="section-sub">Os mais vendidos desta semana</p>
+                <div class="products-grid">
+
+                    <div class="product-card">
+                        <div class="product-img">👕</div>
+                        <div class="product-info">
+                            <div class="product-name">Camiseta Hello World</div>
+                            <div class="product-desc">Estampa clássica de programação, 100% algodão</div>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 59</span>
+                                <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">🧥</div>
+                        <div class="product-info">
+                            <div class="product-name">Moletom GIT PUSH</div>
+                            <div class="product-desc">Moletom quentinho com estilo e qualidade</div>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 149</span>
+                                <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">👕</div>
+                        <div class="product-info">
+                            <div class="product-name">Camiseta Bug Free</div>
+                            <div class="product-desc">Para quem sonha com código sem erros</div>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 64</span>
+                                <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">🧥</div>
+                        <div class="product-info">
+                            <div class="product-name">Moletom Stack Overflow</div>
+                            <div class="product-desc">Homenagem ao salvador de todo programador</div>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 170</span>
+                                <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">⌚</div>
+                        <div class="product-info">
+                            <div class="product-name">Smartwatch Pro</div>
+                            <div class="product-desc">Monitor cardíaco, GPS e à prova d'água</div>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 699</span>
+                                <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">🎮</div>
+                        <div class="product-info">
+                            <div class="product-name">Controle Gamer</div>
+                            <div class="product-desc">Compatível com PC e consoles, vibração HD</div>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 199</span>
+                                <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="banner">
+                <div class="banner-text">
+                    <h3>🔥 Frete grátis hoje!</h3>
+                    <p>Em compras acima de R$ 150. Válido para todo o Brasil.</p>
+                </div>
+                <button class="btn-hero" onclick="showToast('✅ Cupom FRETE22 aplicado!')">Aproveitar agora</button>
+            </div>
+
+            <footer>
+                Feito com ❤️ · <span>ShopNow</span> © 2025 · Todos os direitos reservados
+            </footer>
+        </div>
+
+        <!-- TOAST -->
+        <div id="toast"></div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
+
+.section antiga:
+.section { padding: 3.5rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.3rem; }
+.section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;
