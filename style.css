@@ -50,6 +50,15 @@ nav {
   color: var(--accent);
   letter-spacing: 1px;
   cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  gap: 0.6rem;
+}
+
+.nav-logo {
+  width: 168px; /* aumenta largura */
+  height: auto; /*define a altura da imagem em 120 pixels. */
+  object-fit: contain;
 }
 
 .nav-links { display: flex; gap: 1.5rem; align-items: center; }
@@ -374,12 +383,48 @@ input::placeholder { color: #555; }
   gap: 1.5rem; flex-wrap: wrap;
   max-width: calc(1100px - 4rem); margin: 0 auto 3.5rem;
 }
-.banner-text h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--accent); margin-bottom: 0.5rem; }
-.banner-text p { color: var(--muted); font-size: 0.9rem; }
+.banner-text h3 { 
+  font-family: 'Playfair Display', 
+  serif; font-size: 1.6rem; 
+  color: var(--accent); 
+  margin-bottom: 0.5rem; 
+}
+.banner-text p { 
+  color: var(--muted); 
+  font-size: 0.9rem; 
+}
 
 /* ── FOOTER ── */
-footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
-footer span { color: var(--accent); }
+footer { 
+  border-top: 1px solid var(--border); 
+  padding: 2rem; 
+  text-align: center; 
+  color: var(--muted);
+  font-size: 0.85rem; 
+}
+
+.footer-logo {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 0.8rem; 
+  margin-bottom: 0.8rem;
+}
+.footer-logo-img {
+  width: 50px; 
+  height: 50px; 
+  object-fit: contain; 
+}
+
+.footer-logo-span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+footer span { 
+  color: var(--accent); 
+}
 
 /* ── TOAST ── */
 #toast {
