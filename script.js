@@ -3,7 +3,6 @@
 // =========================================
 
 let cartCount = 0;
-let usuarioLogado = false;
 
 // ── NAVEGAÇÃO ENTRE PÁGINAS ──
 function goTo(pageId) {
@@ -33,7 +32,6 @@ function fazerLogin() {
   if (!email.includes('@')) { showToast('⚠️ E-mail inválido!'); return; }
 
   showToast('✅ Login realizado com sucesso!');
-  usuarioLogado = true;
   setTimeout(function() { goTo('page-home'); }, 700);
 }
 
@@ -60,18 +58,10 @@ function sair() {
 }
 
 // ── CARRINHO ──
-function addCart(id, nome, preco, btn) {
-  // Lógica do Carrinho (Objetos)
-  const itemExistente = carrinho.find(item => item.id === id);
-  if (itemExistente) {
-    itemExistente.quantidade += 1;
-  } else {
-    carrinho.push({ id, nome, preco, quantidade: 1 });
-  }
+function addCart(btn) {
+  cartCount++;
+  document.getElementById('cart-count').textContent = cartCount;
 
-  salvarEAtualizar();
-
-  // Feedback Visual no Botão (O que você já tinha)
   var textoOriginal = btn.textContent;
   btn.textContent = '✓ Adicionado';
   btn.style.background = '#2a7a2a';
@@ -83,73 +73,5 @@ function addCart(id, nome, preco, btn) {
     btn.style.color = '';
   }, 1500);
 
-  showToast(`🛒 ${nome} adicionado!`);
-}
-
-// ── FUNÇÃO DE CHECKOUT ──
-function irParaPagamento() {
-  if (!usuarioLogado) {
-    showToast('⚠️ Faça login para finalizar a compra!');
-    goTo('page-login');
-    return;
-  }
-
-  renderizarResumo(); // <--- Corrigido de 'redenrizar' para 'renderizar'
-  goTo('page-checkout'); // <--- Certifique-se que o ID no HTML é page-checkout
-}
-
-//1. Inicializa o carrinho (Tenta carregar do navegador ou cria um vazio)
-let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-//2. Função para adicionar um produto ao carrinho
-function adicionarAoCarrinho(id, nome, preço) {
-  // Verifica se o item ja esta no carrinho
-  const itemExistente = carrinho.find(item => item.id === id);
-
-  if (itemExistente) {
-    itemExistente.quantidade += 1; // Incrementa a quantidade
-  } else {
-    carrinho.push({ id, nome, preço, quantidade: 1 }); // Adiciona novo item
-  }
-
-  salvarEAtualizar();
-}
-
-//3. SALVAR NO LOCAL STORAGE E ATUALIZAR O CONTADOR VISUAL
-function salvarEAtualizar() {
-  localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-  // Atualiza o número no badge do carrinho (🛒 0)
-  const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
-  const badge = document.getElementById('cart-count');
-  if (badge) badge.innerText = totalItens;
-
-  salvarEAtualizar(); // Atualiza o resumo do pedido se estivermos na página de checkout
-}
-
-// 4. Função para renderizar na tela de resumo
-function renderizarResumo() {
-  const container = document.querySelector('.resumo-pedido-lista'); // Certifique-se que essa classe existe na sua div de checkout
-  const totalElemento = document.querySelector('.valor-total');
-  
-  if (!container || !totalElemento) return;
-
-  if (carrinho.length === 0) {
-    container.innerHTML = "<p style='color:gray'>Seu carrinho está vazio.</p>";
-    totalElemento.innerText = "Total: R$ 0,00";
-    return;
-  }
-
-  container.innerHTML = carrinho.map(item => `
-    <div class="item-carrinho" style="display:flex; justify-content:between; border-bottom:1px solid #333; padding:10px 0;">
-      <div class="info">
-        <p><strong>${item.nome}</strong></p>
-        <p>Qtd: ${item.quantidade}</p>
-      </div>
-      <div class="preco">R$ ${(item.preco * item.quantidade).toFixed(2)}</div>
-    </div>
-  `).join('');
-
-  const total = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
-  totalElemento.innerText = `Total: R$ ${total.toFixed(2)}`;
+  showToast('🛒 Produto adicionado ao carrinho!');
 }
