@@ -14,7 +14,7 @@
 <body>
 
     <!-- ░░░ PÁGINA: LOGIN ░░░ -->
-    <div id="page-login" class="page active">
+    <div id="page-login" class="page">
         <div class="auth-wrapper">
             <div class="auth-visual">
                 <div class="auth-visual-emoji">🛍️</div>
@@ -86,10 +86,10 @@
     </div>
 
     <!-- ░░░ PÁGINA: HOME ░░░ -->
-    <div id="page-home" class="page">
+    <div id="page-home" class="page active">
         <nav>
-            <div class="logo" onclick="goTo('page-home')">          
-                <img src="logo.png.png" alt="logo" class="nav-logo"/>
+            <div class="logo" onclick="goTo('page-home')">
+                <img src="logo.png.png" alt="logo" class="nav-logo" />
                 ShopNow
             </div>
 
@@ -97,156 +97,181 @@
                 <a href="#">Produtos</a>
                 <a href="#">Ofertas</a>
                 <a href="#">Sobre</a>
-                <div class="cart-icon" onclick="showToast('🛒 Carrinho em breve!')">
+                <div class="cart-icon" onclick="irParaPagamento()">
                     🛒 <span class="cart-badge" id="cart-count">0</span>
                 </div>
                 <button class="nav-btn" onclick="sair()">Sair</button>
+                <button class="nav-btn" onclick="irParaPagamento()">Finalizar compra</button>
             </div>
         </nav>
 
         <div class="hero">
-            <img src="hero.jpg" alt="fundo" class="hero-bg" />
-            <div class="hero-content">
-                <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1>
-                <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h
-                    por dia.</p>
-                <div class="hero-btns">
-                    <button class="btn-hero">Ver produtos</button>
-                    <button class="btn-outline">Nossas ofertas</button>
+        <img src="hero.jpg" alt="fundo" class="hero-bg" />
+        <div class="hero-content">
+            <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1>
+            <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h
+                por dia.</p>
+            <div class="hero-btns">
+                <button class="btn-hero">Ver produtos</button>
+                <button class="btn-outline">Nossas ofertas</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section categorias-section">
+        <div class="section-title">Categorias</div> <!--TITULO-->
+        <p class="section-sub">Encontre o que procura rapidamente</p>
+        <div class="cats-grid">
+            <div class="cat-card">
+                <div class="cat-icon">👕</div>
+                <div class="cat-name">Camisetas</div>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">🧥</div>
+                <div class="cat-name">Moletons</div>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">🖥️</div>
+                <div class="cat-name">Programação</div>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">🐧</div>
+                <div class="cat-name">Linux</div>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">🤖</div>
+                <div class="cat-name">IA & Tech</div>
+            </div>
+            <div class="cat-card">
+                <div class="cat-icon">🎮</div>
+                <div class="cat-name">Games</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-center" style="padding-top:0">
+        <div class="section-title">Destaques</div>
+        <p class="section-sub">Os mais vendidos da Loja</p>
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-img">👕</div>
+                <div class="product-info">
+                    <div class="product-name">Camiseta Hello World</div>
+                    <div class="product-desc">Estampa clássica de programação, 100% algodão</div>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 59</span>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">🧥</div>
+                <div class="product-info">
+                    <div class="product-name">Moletom GIT PUSH</div>
+                    <div class="product-desc">Moletom quentinho com estilo e qualidade</div>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 149</span>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">👕</div>
+                <div class="product-info">
+                    <div class="product-name">Camiseta Bug Free</div>
+                    <div class="product-desc">Para quem sonha com código sem erros</div>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 64</span>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">🧥</div>
+                <div class="product-info">
+                    <div class="product-name">Moletom Stack Overflow</div>
+                    <div class="product-desc">Homenagem ao salvador de todo programador</div>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 170</span>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">👕</div>
+                <div class="product-info">
+                    <div class="product-name">Sem backup, só Jesus salva</div>
+                    <div class="product-desc">Clássica para quem vive de risco no servidor</div>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 95</span>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">👕</div>
+                <div class="product-info">
+                    <div class="product-name">Deploy Primeiro, Reze Depois</div>
+                    <div class="product-desc">Para os corajosos que não testam em homologação</div>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 99</span>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-text">
+            <h3>🔥 Frete grátis apenas até hoje!</h3>
+            <p>Em compras acima de R$ 150. Válido para todo o Brasil.</p>
+        </div>
+        <button class="btn-hero" onclick="showToast('✅ Cupom FRETE22 aplicado!')">Aproveitar agora</button>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png.png" alt="logo" alt="ShopNow" class="footer-logo-img" />
+            <span> ShopNow</span>
+        </div>
+        Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
+    </footer>
+    </div>
+    <div id="page-checkout" class="page">
+        <div class="checkout-container">
+            <button class="btn-back" onclick="goTo('page-home')">← Voltar às compras</button>
+
+            <div class="checkout-grid">
+                <div class="checkout-summary">
+                    <h2>Resumo do pedido</h2>
+                    <div class="resumo-pedido-lista">
+                    </div>
+                    <div class="checkout-total">
+                        <p class="valor-total">Total: R$ 0,00</p>
+                    </div>
+                </div>
+
+                <div class="checkout-form">
+                    <h2>Identificação</h2>
+                    <p>Faça login ou cadastre-se para continuar</p>
+                    <button class="btn-hero" style="width:100%" onclick="showToast('Pedido finalizado!')">Continuar para
+                        entrega</button>
                 </div>
             </div>
         </div>
-
-        <div class="section categorias-section">
-            <div class="section-title">Categorias</div> <!--TITULO-->
-            <p class="section-sub">Encontre o que procura rapidamente</p>
-            <div class="cats-grid">
-                <div class="cat-card">
-                    <div class="cat-icon">👕</div>
-                    <div class="cat-name">Camisetas</div>
-                </div>
-                <div class="cat-card">
-                    <div class="cat-icon">🧥</div>
-                    <div class="cat-name">Moletons</div>
-                </div>
-                <div class="cat-card">
-                    <div class="cat-icon">🖥️</div>
-                    <div class="cat-name">Programação</div>
-                </div>
-                <div class="cat-card">
-                    <div class="cat-icon">🐧</div>
-                    <div class="cat-name">Linux</div>
-                </div>
-                <div class="cat-card">
-                    <div class="cat-icon">🤖</div>
-                    <div class="cat-name">IA & Tech</div>
-                </div>
-                <div class="cat-card">
-                    <div class="cat-icon">🎮</div>
-                    <div class="cat-name">Games</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section section-center" style="padding-top:0">
-            <div class="section-title">Destaques</div>
-            <p class="section-sub">Os mais vendidos da Loja</p>
-            <div class="products-grid">
-
-                <div class="product-card">
-                    <div class="product-img">👕</div>
-                    <div class="product-info">
-                        <div class="product-name">Camiseta Hello World</div>
-                        <div class="product-desc">Estampa clássica de programação, 100% algodão</div>
-                        <div class="product-footer">
-                            <span class="product-price">R$ 59</span>
-                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">🧥</div>
-                    <div class="product-info">
-                        <div class="product-name">Moletom GIT PUSH</div>
-                        <div class="product-desc">Moletom quentinho com estilo e qualidade</div>
-                        <div class="product-footer">
-                            <span class="product-price">R$ 149</span>
-                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">👕</div>
-                    <div class="product-info">
-                        <div class="product-name">Camiseta Bug Free</div>
-                        <div class="product-desc">Para quem sonha com código sem erros</div>
-                        <div class="product-footer">
-                            <span class="product-price">R$ 64</span>
-                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">🧥</div>
-                    <div class="product-info">
-                        <div class="product-name">Moletom Stack Overflow</div>
-                        <div class="product-desc">Homenagem ao salvador de todo programador</div>
-                        <div class="product-footer">
-                            <span class="product-price">R$ 170</span>
-                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">👕</div>
-                    <div class="product-info">
-                        <div class="product-name">Sem backup, só Jesus salva</div>
-                        <div class="product-desc">Clássica para quem vive de risco no servidor</div>
-                        <div class="product-footer">
-                            <span class="product-price">R$ 95</span>
-                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">👕</div>
-                    <div class="product-info">
-                        <div class="product-name">Deploy Primeiro, Reze Depois</div>
-                        <div class="product-desc">Para os corajosos que não testam em homologação</div>
-                        <div class="product-footer">
-                            <span class="product-price">R$ 99</span>
-                            <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="banner">
-            <div class="banner-text">
-                <h3>🔥 Frete grátis hoje!</h3>
-                <p>Em compras acima de R$ 150. Válido para todo o Brasil.</p>
-            </div>
-            <button class="btn-hero" onclick="showToast('✅ Cupom FRETE22 aplicado!')">Aproveitar agora</button>
-        </div>
-
-        <footer>
-            <div class="footer-logo">
-                <img src="logo.png.png" alt="logo" alt="ShopNow" class="footer-logo-img"/>
-                <span> ShopNow</span>
-            </div>
-            Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
-        </footer>
     </div>
 
     <div id="toast"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

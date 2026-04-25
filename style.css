@@ -41,7 +41,7 @@ nav {
   background: var(--bg);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
@@ -61,9 +61,22 @@ nav {
   object-fit: contain;
 }
 
-.nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-.nav-links a:hover { color: var(--text); }
+.nav-links {  
+  display: flex; 
+  gap: 1.5rem; 
+  align-items: center; 
+}
+
+.nav-links a { 
+  color: var(--muted); 
+  text-decoration: none; 
+  font-size: 0.9rem;
+  transition: color 0.2s; 
+}
+
+.nav-links a:hover { 
+  color: var(--text); 
+}
 
 .nav-btn {
   background: var(--accent);
@@ -117,10 +130,26 @@ nav {
   font-size: 2.8rem; color: var(--accent);
   line-height: 1.15; margin-bottom: 1rem; position: relative;
 }
-.auth-visual p { color: var(--muted); font-size: 1rem; max-width: 280px; line-height: 1.6; position: relative; }
-.auth-visual-emoji { font-size: 4rem; margin-bottom: 1.5rem; position: relative; }
+.auth-visual p { 
+  color: var(--muted); 
+  font-size: 1rem; 
+  max-width: 280px; 
+  line-height: 1.6; 
+  position: relative; 
+}
 
-.auth-form-area { display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.auth-visual-emoji { 
+  font-size: 4rem; 
+  margin-bottom: 1.5rem; 
+  position: relative; 
+}
+
+.auth-form-area { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 2rem;
+}
 
 .auth-card {
   width: 100%; max-width: 400px;
@@ -183,11 +212,30 @@ input::placeholder { color: #555; }
 }
 .btn-outline:hover { background: rgba(232,200,114,0.08); }
 
-.auth-switch { margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--muted); }
-.auth-switch a { color: var(--accent); cursor: pointer; text-decoration: none; }
-.auth-switch a:hover { text-decoration: underline; }
+.auth-switch { 
+  margin-top: 1.5rem; 
+  text-align: center; 
+  font-size: 0.85rem; 
+  color: var(--muted); 
+}
 
-.divider { display: flex; align-items: center; gap: 1rem; margin: 1.2rem 0; }
+.auth-switch a { 
+  color: var(--accent); 
+  cursor: pointer; 
+  text-decoration: none; 
+}
+
+.auth-switch a:hover { 
+  text-decoration: underline; 
+}
+
+.divider { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  margin: 1.2rem 0; 
+} 
+
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 .divider span { color: var(--muted); font-size: 0.75rem; }
 
@@ -249,10 +297,11 @@ input::placeholder { color: #555; }
 .section {
   position: relative;
   z-index: 2;
-  padding: 3.5rem 2rem;
+  padding: 0 20px;  
   max-width: 1300px; /* limita o tamanho */
   margin: 0 auto; /* centraliza corretamente */
   background: transparent;
+  margin-bottom: 60px;
 }
 
 .section-center {
@@ -456,4 +505,99 @@ footer span {
   gap: 1.5rem;
   max-width: 600px;
   margin: 0 auto;
+}
+
+
+/* ──  ESTILOS DO CHECKOUT ── */
+#page -checkout {
+    padding: 100px 20px; /* Espaço para não ficar colado no topo */
+    max-width: 1200px;
+    margin: 0 auto;
+    color:#fff;
+}
+.checkout-container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: white;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px; /* Lista larga na esquerda, formulário à direita */
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.checkout-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ffd700; /* Dourado */
+}
+
+
+/* Lista de itens no resumo */
+.resumo-pedido-lista {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #333;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.item-carrinho:last-child {
+    border-bottom: none;
+}
+
+.item-carrinho .info strong {
+    color: #ffd700; /* Dourado para destacar o nome */
+    font-size: 1.1rem;
+}
+
+/* Valor Total */
+.valor-total {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    text-align: right;
+    margin-top: 20px;
+    color: #ffd700;
+}
+
+/* Botão de voltar */
+.btn-back {
+    background: none;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #ffd700;
+    color: #000;
+}
+
+/* Ajuste Responsivo (para celular) */
+@media (max-width: 850px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
 }
