@@ -3,6 +3,7 @@
 // =========================================
 
 let cartCount = 0;
+let usuarioLogado = false;
 
 // ── NAVEGAÇÃO ENTRE PÁGINAS ──
 function goTo(pageId) {
@@ -31,6 +32,7 @@ function fazerLogin() {
   if (!email || !senha) { showToast('⚠️ Preencha todos os campos!'); return; }
   if (!email.includes('@')) { showToast('⚠️ E-mail inválido!'); return; }
 
+  usuarioLogado = true;
   showToast('✅ Login realizado com sucesso!');
   setTimeout(function() { goTo('page-home'); }, 700);
 }
@@ -53,8 +55,29 @@ function fazerCadastro() {
 
 // ── SAIR ──
 function sair() {
+  usuarioLogado = false;
   showToast('👋 Até logo!');
   setTimeout(function() { goTo('page-login'); }, 800);
+}
+
+// ── PAGAMENTO ──
+function irParaPagamento() {
+  if (!usuarioLogado) {
+    showToast('⚠️ Faça login antes de finalizar a compra!');
+    goTo('page-login');
+    return;
+  }
+
+  atualizarCheckout();
+  goTo('page-checkout');
+}
+
+function atualizarCheckout() {
+  var badge = document.getElementById('cart-count');
+  var checkoutCount = document.getElementById('checkout-count');
+  if (badge && checkoutCount) {
+    checkoutCount.textContent = badge.textContent;
+  }
 }
 
 // ── CARRINHO ──

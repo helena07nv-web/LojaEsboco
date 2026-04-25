@@ -14,7 +14,7 @@
 <body>
 
     <!-- ░░░ PÁGINA: LOGIN ░░░ -->
-    <div id="page-login" class="page active">
+    <div id="page-login" class="page">
         <div class="auth-wrapper">
             <div class="auth-visual">
                 <div class="auth-visual-emoji">🛍️</div>
@@ -86,10 +86,10 @@
     </div>
 
     <!-- ░░░ PÁGINA: HOME ░░░ -->
-    <div id="page-home" class="page">
+    <div id="page-home" class="page active">
         <nav>
-            <div class="logo" onclick="goTo('page-home')">          
-                <img src="logo.png.png" alt="logo" class="nav-logo"/>
+            <div class="logo" onclick="goTo('page-home')">
+                <img src="logo.png.png" alt="logo" class="nav-logo" />
                 ShopNow
             </div>
 
@@ -97,7 +97,7 @@
                 <a href="#">Produtos</a>
                 <a href="#">Ofertas</a>
                 <a href="#">Sobre</a>
-                <div class="cart-icon" onclick="showToast('🛒 Carrinho em breve!')">
+                <div class="cart-icon" onclick="irParaPagamento()">
                     🛒 <span class="cart-badge" id="cart-count">0</span>
                 </div>
                 <button class="nav-btn" onclick="sair()">Sair</button>
@@ -243,6 +243,17 @@
             </div>
             Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
         </footer>
+    </div>
+
+    <div id="page-checkout" class="page">
+        <div class="checkout-wrapper">
+            <button class="btn-back" onclick="goTo('page-home')">← Voltar às compras</button>
+            <h2>Seu carrinho</h2>
+            <p>Itens adicionados: <span id="checkout-count">0</span></p>
+            <div class="checkout-list">
+                <p>O carrinho ainda não tem itens visíveis, mas o contador acima mostra a quantidade adicionada.</p>
+            </div>
+        </div>
     </div>
 
     <div id="toast"></div>
