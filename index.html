@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopNow — Loja Online</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap"
-        rel="stylesheet" /> <!-- IMPORTA AS LETRAS DO GOOGLE -->
-    <link rel="stylesheet" href="style.css?v=2" />
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -25,19 +25,16 @@
                 <div class="auth-card">
                     <h2>Entrar</h2>
                     <p class="subtitle">Acesse sua conta ShopNow</p>
-
                     <div class="field">
                         <label>E-MAIL</label>
-                        <input type="email" id="login-email" placeholder="seu@email.com" />
+                        <input type="email" id="login-email" placeholder="seu@email.com">
                     </div>
                     <div class="field">
                         <label>SENHA</label>
-                        <input type="password" id="login-pass" placeholder="••••••••" />
+                        <input type="password" id="login-pass" placeholder="••••••••">
                     </div>
                     <button class="btn-primary" onclick="fazerLogin()">Entrar na conta</button>
-
                     <div class="divider"><span>ou</span></div>
-
                     <p class="auth-switch">
                         Não tem conta? <a onclick="goTo('page-register')">Criar conta grátis</a>
                     </p>
@@ -58,25 +55,23 @@
                 <div class="auth-card">
                     <h2>Cadastrar</h2>
                     <p class="subtitle">Crie sua conta gratuitamente</p>
-
                     <div class="field">
                         <label>NOME COMPLETO</label>
-                        <input type="text" id="reg-nome" placeholder="João da Silva" />
+                        <input type="text" id="reg-nome" placeholder="João da Silva">
                     </div>
                     <div class="field">
                         <label>E-MAIL</label>
-                        <input type="email" id="reg-email" placeholder="seu@email.com" />
+                        <input type="email" id="reg-email" placeholder="seu@email.com">
                     </div>
                     <div class="field">
                         <label>SENHA</label>
-                        <input type="password" id="reg-pass" placeholder="Mínimo 6 caracteres" />
+                        <input type="password" id="reg-pass" placeholder="Mínimo 6 caracteres">
                     </div>
                     <div class="field">
                         <label>CONFIRMAR SENHA</label>
-                        <input type="password" id="reg-pass2" placeholder="Repita a senha" />
+                        <input type="password" id="reg-pass2" placeholder="Repita a senha">
                     </div>
                     <button class="btn-primary" onclick="fazerCadastro()">Criar conta</button>
-
                     <p class="auth-switch" style="margin-top:1rem;">
                         Já tem conta? <a onclick="goTo('page-login')">Fazer login</a>
                     </p>
@@ -89,15 +84,14 @@
     <div id="page-home" class="page active">
         <nav>
             <div class="logo" onclick="goTo('page-home')">
-                <img src="logo.png.png" alt="logo" class="nav-logo" />
+                <img src="logo.png.png" alt="logo" class="nav-logo">
                 ShopNow
             </div>
-
             <div class="nav-links">
                 <a href="#">Produtos</a>
                 <a href="#">Ofertas</a>
                 <a href="#">Sobre</a>
-                <div class="cart-icon" onclick="irParaPagamento()">
+                <div class="cart-icon" onclick="irParaCarrinho()">
                     🛒 <span class="cart-badge" id="cart-count">0</span>
                 </div>
                 <button class="nav-btn" onclick="sair()">Sair</button>
@@ -105,7 +99,7 @@
         </nav>
 
         <div class="hero">
-            <img src="hero.jpg" alt="fundo" class="hero-bg" />
+            <img src="hero.jpg" alt="fundo" class="hero-bg">
             <div class="hero-content">
                 <h1>Compre o que há de <span>melhor</span> de TI Aqui.</h1>
                 <p>Produtos selecionados, entrega rápida e os melhores preços do mercado. Sua loja de TI favorita, 24h
@@ -118,7 +112,7 @@
         </div>
 
         <div class="section categorias-section">
-            <div class="section-title">Categorias</div> <!--TITULO-->
+            <div class="section-title">Categorias</div>
             <p class="section-sub">Encontre o que procura rapidamente</p>
             <div class="cats-grid">
                 <div class="cat-card">
@@ -153,7 +147,8 @@
             <p class="section-sub">Os mais vendidos da Loja</p>
             <div class="products-grid">
 
-                <div class="product-card">
+                <div class="product-card" data-nome="Camiseta Hello World" data-preco="59" data-emoji="👕"
+                    data-desc="Estampa clássica de programação, 100% algodão">
                     <div class="product-img">👕</div>
                     <div class="product-info">
                         <div class="product-name">Camiseta Hello World</div>
@@ -165,7 +160,8 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-nome="Moletom GIT PUSH" data-preco="149" data-emoji="🧥"
+                    data-desc="Moletom quentinho com estilo e qualidade">
                     <div class="product-img">🧥</div>
                     <div class="product-info">
                         <div class="product-name">Moletom GIT PUSH</div>
@@ -177,7 +173,8 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-nome="Camiseta Bug Free" data-preco="64" data-emoji="👕"
+                    data-desc="Para quem sonha com código sem erros">
                     <div class="product-img">👕</div>
                     <div class="product-info">
                         <div class="product-name">Camiseta Bug Free</div>
@@ -189,7 +186,8 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-nome="Moletom Stack Overflow" data-preco="170" data-emoji="🧥"
+                    data-desc="Homenagem ao salvador de todo programador">
                     <div class="product-img">🧥</div>
                     <div class="product-info">
                         <div class="product-name">Moletom Stack Overflow</div>
@@ -201,7 +199,8 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-nome="Sem backup, só Jesus salva" data-preco="95" data-emoji="👕"
+                    data-desc="Clássica para quem vive de risco no servidor">
                     <div class="product-img">👕</div>
                     <div class="product-info">
                         <div class="product-name">Sem backup, só Jesus salva</div>
@@ -213,7 +212,8 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-nome="Deploy Primeiro, Reze Depois" data-preco="99" data-emoji="👕"
+                    data-desc="Para os corajosos que não testam em homologação">
                     <div class="product-img">👕</div>
                     <div class="product-info">
                         <div class="product-name">Deploy Primeiro, Reze Depois</div>
@@ -231,33 +231,140 @@
         <div class="banner">
             <div class="banner-text">
                 <h3>🔥 Frete grátis hoje!</h3>
-                <p>Em compras acima de R$ 150. Válido para todo o Brasil.</p>
+                <p>Em compras acima de R$ 99. Válido para todo o Brasil.</p>
             </div>
             <button class="btn-hero" onclick="showToast('✅ Cupom FRETE22 aplicado!')">Aproveitar agora</button>
         </div>
 
         <footer>
             <div class="footer-logo">
-                <img src="logo.png.png" alt="logo" alt="ShopNow" class="footer-logo-img"/>
+                <img src="logo.png.png" alt="ShopNow" class="footer-logo-img">
                 <span> ShopNow</span>
             </div>
             Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
         </footer>
     </div>
 
+    <!-- ░░░ PÁGINA: CARRINHO ░░░ -->
     <div id="page-checkout" class="page">
-        <div class="checkout-wrapper">
-            <button class="btn-back" onclick="goTo('page-home')">← Voltar às compras</button>
-            <h2>Seu carrinho</h2>
-            <p>Itens adicionados: <span id="checkout-count">0</span></p>
-            <div class="checkout-list">
-                <p>O carrinho ainda não tem itens visíveis, mas o contador acima mostra a quantidade adicionada.</p>
+        <nav>
+            <div class="logo" onclick="goTo('page-home')">
+                <img src="logo.png.png" alt="logo" class="nav-logo">
+                ShopNow
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="goTo('page-home')">Produtos</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Sobre</a>
+                <div class="cart-icon" onclick="irParaCarrinho()">
+                    🛒 <span class="cart-badge" id="cart-count-checkout">0</span>
+                </div>
+                <button class="nav-btn" onclick="sair()">Sair</button>
+            </div>
+        </nav>
+
+        <div class="cart-page-wrapper">
+
+            <div class="cart-left">
+                <div class="cart-header">
+                    <span class="cart-header-icon">🛒</span>
+                    <div>
+                        <h2 class="cart-title">Seu carrinho</h2>
+                        <p class="cart-subtitle">Revise os produtos e finalize sua compra.</p>
+                    </div>
+                </div>
+
+                <div class="cart-table-head">
+                    <span>Produto</span>
+                    <span>Preço</span>
+                    <span>Quantidade</span>
+                    <span>Subtotal</span>
+                </div>
+
+                <div id="cart-items-list"></div>
+
+                <div id="cart-empty" class="cart-empty" style="display:none;">
+                    <div class="cart-empty-emoji">🛒</div>
+                    <p>Seu carrinho está vazio.</p>
+                    <button class="btn-hero" onclick="goTo('page-home')">Explorar produtos</button>
+                </div>
+
+                <div class="cart-coupon" id="cart-coupon-area">
+                    <div class="coupon-icon">🏷️</div>
+                    <input type="text" id="coupon-input" placeholder="Cupom de desconto">
+                    <button class="btn-coupon" onclick="aplicarCupom()">Aplicar</button>
+                </div>
+
+                <button class="btn-back" onclick="goTo('page-home')">← Continuar comprando</button>
+            </div>
+
+            <div class="cart-right">
+                <div class="cart-summary">
+                    <div class="summary-title"><span>📦</span> Resumo da compra</div>
+                    <div class="summary-row">
+                        <span id="summary-qtd-label">Subtotal (0 produtos)</span>
+                        <span id="summary-subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Descontos</span>
+                        <span id="summary-desconto" class="summary-desconto">– R$ 0,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Frete <span class="frete-info" title="Grátis acima de R$ 99">ⓘ</span></span>
+                        <span id="summary-frete" class="summary-frete">Grátis</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-total-row">
+                        <span>Total</span>
+                        <span id="summary-total" class="summary-total-value">R$ 0,00</span>
+                    </div>
+                    <div class="summary-parcelamento" id="summary-parcelamento"></div>
+                    <button class="btn-finalizar" onclick="finalizarCompra()">🔒 Finalizar compra</button>
+                    <div class="summary-seguro">🛡️ Ambiente 100% seguro</div>
+                </div>
+
+                <div class="cart-benefits">
+                    <div class="cart-benefits-title">Por que comprar na ShopNow?</div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🚚</span>
+                        <div><strong>Frete grátis</strong>
+                            <p>Em compras acima de R$ 99</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <div><strong>Entrega rápida</strong>
+                            <p>Para todo o Brasil</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">↩️</span>
+                        <div><strong>Devolução grátis</strong>
+                            <p>Até 7 dias após o recebimento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cart-trust-bar">
+            <div class="trust-item">🛡️ <div><strong>Compra segura</strong><span>Seus dados protegidos</span></div>
+            </div>
+            <div class="trust-item">🎧 <div><strong>Atendimento</strong><span>Seg a Sex das 8h às 18h</span></div>
+            </div>
+            <div class="trust-item">💳 <div><strong>Parcele em até 4x</strong><span>Sem juros no cartão</span></div>
+            </div>
+            <div class="trust-item">🏆 <div><strong>Satisfação garantida</strong><span>Ou seu dinheiro de volta</span>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="toast"></div>
-
     <script src="script.js"></script>
 </body>
+
 </html>
+
+<!-- VER ERROS NO NAVEGADOR: APERTAR F12 E IR EM "CONSOLE". -->
