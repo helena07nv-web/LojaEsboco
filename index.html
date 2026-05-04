@@ -90,7 +90,7 @@
             <div class="nav-links">
                 <a href="#">Produtos</a>
                 <a href="#">Ofertas</a>
-                <a href="#">Sobre</a>
+                <a href="#" onclick="goTo('page-sobre')">Sobre</a>
                 <div class="cart-icon" onclick="irParaCarrinho()">
                     🛒 <span class="cart-badge" id="cart-count">0</span>
                 </div>
@@ -142,12 +142,15 @@
             </div>
         </div>
 
+        <!--O DATA-* e para guadar as informacoes que ira ser adicionado para que o JS consiga acessar os valores -->
         <div class="section section-center" style="padding-top:0">
             <div class="section-title">Destaques</div>
             <p class="section-sub">Os mais vendidos da Loja</p>
             <div class="products-grid">
 
-                <div class="product-card" data-nome="Camiseta Hello World" data-preco="59" data-emoji="👕"
+                <div class="product-card" 
+                    data-nome="Camiseta Hello World" 
+                    data-preco="59" data-emoji="👕"
                     data-desc="Estampa clássica de programação, 100% algodão">
                     <div class="product-img">👕</div>
                     <div class="product-info">
@@ -274,7 +277,7 @@
                     </div>
                 </div>
 
-                <div class="cart-table-head">
+                <div class="cart-table-head"> <!-- Cabeçalho da tabela de produtos no carrinho. cart=carrinho. table=tabela. head=cabeçalho. -->
                     <span>Produto</span>
                     <span>Preço</span>
                     <span>Quantidade</span>
@@ -283,6 +286,7 @@
 
                 <div id="cart-items-list"></div>
 
+                <!-- bloco onde o carrinho está vazio -->
                 <div id="cart-empty" class="cart-empty" style="display:none;">
                     <div class="cart-empty-emoji">🛒</div>
                     <p>Seu carrinho está vazio.</p>
@@ -298,10 +302,11 @@
                 <button class="btn-back" onclick="goTo('page-home')">← Continuar comprando</button>
             </div>
 
+            <!-- Painel de resumo da compra, essa div é o container da parte direita: -->
             <div class="cart-right">
-                <div class="cart-summary">
+                <div class="cart-summary"> <!-- summary= resumo.-->
                     <div class="summary-title"><span>📦</span> Resumo da compra</div>
-                    <div class="summary-row">
+                    <div class="summary-row"> <!-- summary-row= linha do resumo. Normalmente junta as duas linhas ex: subtotal (0 produtos) R$ 0,00. -->
                         <span id="summary-qtd-label">Subtotal (0 produtos)</span>
                         <span id="summary-subtotal">R$ 0,00</span>
                     </div>
@@ -348,6 +353,7 @@
 
         </div>
 
+        <!-- Barra de selo de confiança no rodapé do site-->
         <div class="cart-trust-bar">
             <div class="trust-item">🛡️ <div><strong>Compra segura</strong><span>Seus dados protegidos</span></div>
             </div>
@@ -361,6 +367,133 @@
         </div>
     </div>
 
+<!-- ░░░ PÁGINA: SOBRE ░░░ -->
+<div id="page-sobre" class="page">
+    <nav>
+        <div class="logo" onclick="goTo('page-home')">
+            <img src="logo.png.png" alt="logo" class="nav-logo" />
+            ShopNow
+        </div>
+        <div class="nav-links">
+            <a href="#" onclick="goTo('page-home')">Produtos</a>
+            <a href="#">Ofertas</a>
+            <a href="#" onclick="goTo('page-sobre')" style="color:var(--accent)">Sobre</a>
+            <div class="cart-icon" onclick="irParaCarrinho()">
+                🛒 <span class="cart-badge" id="cart-count-sobre">0</span>
+            </div>
+            <button class="nav-btn" onclick="sair()">Sair</button>
+        </div>
+    </nav>
+
+    <!-- HERO SOBRE -->
+    <div class="sobre-hero">
+        <div class="sobre-hero-content">
+            <div class="sobre-tag">Sobre nós</div>
+            <h1>Feito por devs,<br /><span>para devs.</span></h1>
+            <p>A ShopNow nasceu da vontade de unir tecnologia e moda. Somos uma loja criada por estudantes de ADS apaixonados por código e estilo.</p>
+        </div>
+        <div class="sobre-hero-emoji">👨‍💻</div>
+    </div>
+
+    <!-- MISSÃO -->
+    <div class="sobre-section">
+        <div class="sobre-cards-row">
+
+            <div class="sobre-card">
+                <div class="sobre-card-icon">🎯</div>
+                <h3>Nossa Missão</h3>
+                <p>Oferecer roupas exclusivas para programadores e entusiastas de tecnologia, combinando moda moderna com identidade do universo dev.</p>
+            </div>
+
+            <div class="sobre-card">
+                <div class="sobre-card-icon">⚡</div>
+                <h3>Nosso Diferencial</h3>
+                <p>Peças com temas tecnológicos, design moderno e atendimento 24h via suporte. Porque programador não dorme — e a gente também não.</p>
+            </div>
+
+            <div class="sobre-card">
+                <div class="sobre-card-icon">👥</div>
+                <h3>Nosso Público</h3>
+                <p>Desenvolvedores, estudantes de TI e qualquer pessoa que ama tecnologia e quer expressar isso com estilo no dia a dia.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- EQUIPE -->
+    <div class="sobre-section">
+        <div class="sobre-section-title">
+            <h2>Nossa Equipe</h2>
+            <p>O time por trás da ShopNow</p>
+        </div>
+        <div class="equipe-grid">
+
+            <div class="equipe-card">
+                <div class="equipe-avatar">👩‍🎨</div>
+                <div class="equipe-nome">Kelly</div>
+                <div class="equipe-cargo">UI & UX Design</div>
+            </div>
+
+            <div class="equipe-card">
+                <div class="equipe-avatar">👩‍💻</div>
+                <div class="equipe-nome">Helena Neves</div>
+                <div class="equipe-cargo">Desenvolvimento Web</div>
+            </div>
+
+            <div class="equipe-card">
+                <div class="equipe-avatar">🗄️</div>
+                <div class="equipe-nome">Rondineli</div>
+                <div class="equipe-cargo">Banco de Dados</div>
+            </div>
+
+            <div class="equipe-card">
+                <div class="equipe-avatar">⚙️</div>
+                <div class="equipe-nome">Laura</div>
+                <div class="equipe-cargo">Engenharia de Software</div>
+            </div>
+
+            <div class="equipe-card">
+                <div class="equipe-avatar">🧩</div>
+                <div class="equipe-nome">Vinícius Duarte</div>
+                <div class="equipe-cargo">Programação Orientada a Objetos com C#.</div>
+            </div>
+
+            <div class="equipe-card">
+                <div class="equipe-avatar">💬</div>
+                <div class="equipe-nome">Nicolas Ribeiro</div>
+                <div class="equipe-cargo">Libras (AVA)
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="sobre-section">
+        <div class="sobre-contato">
+            <div class="sobre-contato-icon">✉️</div>
+            <h3>Fale com a gente</h3>
+            <p>Dúvidas, sugestões ou parcerias? Nosso suporte está disponível <strong>24 horas</strong>!</p>
+            <a href="mailto:shopnow2026@gmail.com" class="btn-contato">shopnow2026@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- PROJETO PIM -->
+    <div class="sobre-pim">
+        <div class="sobre-pim-inner">
+            <span class="pim-badge">🎓 Projeto Acadêmico</span>
+            <p>A ShopNow é um projeto de PIM desenvolvido pelo curso de <strong>Análise e Desenvolvimento de Sistemas</strong>. Um estudo prático de desenvolvimento web completo.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png.png" alt="ShopNow" class="footer-logo-img"/>
+            <span> ShopNow</span>
+        </div>
+        Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
+    </footer>
+</div>
+
     <div id="toast"></div>
     <script src="script.js"></script>
 </body>
@@ -368,3 +501,13 @@
 </html>
 
 <!-- VER ERROS NO NAVEGADOR: APERTAR F12 E IR EM "CONSOLE". -->
+<!-- ALTERAÇÕES NO CÓDIGO: DATA-* NOS 6 PRODUTOS
+ 2: FUNÇÃO DE CARRINHO NA NAV: ONCLICK DE IRPARAPAGAMENTO PARA IRPARACARRINHO().
+ 3: A PAGINJA #page-checkout inteira fopi substituida com o carrinho completo com nav. -->
+ <!-- strong deixa os textos em negrito, span é para destacar palavras, p é parágrafo, h1 é título grande, h2 é título médio, h3 é título pequeno. -->
+
+<!--SOBRE CARDS: -->
+    <!--<div class="sobre-card"-->                    <!-- a caixinha -->
+    <!--<div class="sobre-card-icon">🎯</div !-->   <!-- ícone -->
+    <!--<h3>Nossa Missão</h3!-->                   <!-- título -->
+    <!--<p>Oferecer roupas exclusivas...</p>!-->  <!-- texto -->

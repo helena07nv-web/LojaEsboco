@@ -56,6 +56,7 @@ function sair() {
 }
 
 // ── ADICIONAR AO CARRINHO ──
+// ──O JS LE AS INFORMAÇÕES QUANDO O USUARIO CLICA.
 function addCart(btn) {
   var card = btn.closest('.product-card');
   var nome  = card.getAttribute('data-nome');
@@ -87,12 +88,14 @@ function addCart(btn) {
   showToast('🛒 Produto adicionado ao carrinho!');
 }
 
-// ── ATUALIZAR BADGE ──
+// ── ATUALIZAR BADGE ── 
 function atualizarBadge() {
   var total = cartItems.reduce(function(sum, i) { return sum + i.qty; }, 0);
   document.getElementById('cart-count').textContent = total;
   var badge2 = document.getElementById('cart-count-checkout');
   if (badge2) badge2.textContent = total;
+  var badge3 = document.getElementById('cart-count-sobre');  // ← adiciona aqui
+  if (badge3) badge3.textContent = total;
 }
 
 // ── IR PARA O CARRINHO ──
