@@ -89,7 +89,7 @@
             </div>
             <div class="nav-links">
                 <a href="#">Produtos</a>
-                <a href="#">Ofertas</a>
+                <a href="#" onclick="goTo('page-ofertas')">Ofertas</a>
                 <a href="#" onclick="goTo('page-sobre')">Sobre</a>
                 <div class="cart-icon" onclick="irParaCarrinho()">
                     🛒 <span class="cart-badge" id="cart-count">0</span>
@@ -106,7 +106,7 @@
                     por dia.</p>
                 <div class="hero-btns">
                     <button class="btn-hero">Ver produtos</button>
-                    <button class="btn-outline">Nossas ofertas</button>
+                    <button class="btn-outline" onclick="goTo('page-ofertas')">Nossas ofertas</button>
                 </div>
             </div>
         </div>
@@ -142,15 +142,12 @@
             </div>
         </div>
 
-        <!--O DATA-* e para guadar as informacoes que ira ser adicionado para que o JS consiga acessar os valores -->
         <div class="section section-center" style="padding-top:0">
             <div class="section-title">Destaques</div>
             <p class="section-sub">Os mais vendidos da Loja</p>
             <div class="products-grid">
 
-                <div class="product-card" 
-                    data-nome="Camiseta Hello World" 
-                    data-preco="59" data-emoji="👕"
+                <div class="product-card" data-nome="Camiseta Hello World" data-preco="59" data-emoji="👕"
                     data-desc="Estampa clássica de programação, 100% algodão">
                     <div class="product-img">👕</div>
                     <div class="product-info">
@@ -238,14 +235,6 @@
             </div>
             <button class="btn-hero" onclick="showToast('✅ Cupom FRETE22 aplicado!')">Aproveitar agora</button>
         </div>
-
-        <footer>
-            <div class="footer-logo">
-                <img src="logo.png.png" alt="ShopNow" class="footer-logo-img">
-                <span> ShopNow</span>
-            </div>
-            Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
-        </footer>
     </div>
 
     <!-- ░░░ PÁGINA: CARRINHO ░░░ -->
@@ -257,8 +246,8 @@
             </div>
             <div class="nav-links">
                 <a href="#" onclick="goTo('page-home')">Produtos</a>
-                <a href="#">Ofertas</a>
-                <a href="#">Sobre</a>
+                <a href="#" onclick="goTo('page-ofertas')">Ofertas</a>
+                <a href="#" onclick="goTo('page-sobre')">Sobre</a>
                 <div class="cart-icon" onclick="irParaCarrinho()">
                     🛒 <span class="cart-badge" id="cart-count-checkout">0</span>
                 </div>
@@ -267,7 +256,6 @@
         </nav>
 
         <div class="cart-page-wrapper">
-
             <div class="cart-left">
                 <div class="cart-header">
                     <span class="cart-header-icon">🛒</span>
@@ -277,7 +265,7 @@
                     </div>
                 </div>
 
-                <div class="cart-table-head"> <!-- Cabeçalho da tabela de produtos no carrinho. cart=carrinho. table=tabela. head=cabeçalho. -->
+                <div class="cart-table-head">
                     <span>Produto</span>
                     <span>Preço</span>
                     <span>Quantidade</span>
@@ -286,7 +274,6 @@
 
                 <div id="cart-items-list"></div>
 
-                <!-- bloco onde o carrinho está vazio -->
                 <div id="cart-empty" class="cart-empty" style="display:none;">
                     <div class="cart-empty-emoji">🛒</div>
                     <p>Seu carrinho está vazio.</p>
@@ -302,11 +289,10 @@
                 <button class="btn-back" onclick="goTo('page-home')">← Continuar comprando</button>
             </div>
 
-            <!-- Painel de resumo da compra, essa div é o container da parte direita: -->
             <div class="cart-right">
-                <div class="cart-summary"> <!-- summary= resumo.-->
+                <div class="cart-summary">
                     <div class="summary-title"><span>📦</span> Resumo da compra</div>
-                    <div class="summary-row"> <!-- summary-row= linha do resumo. Normalmente junta as duas linhas ex: subtotal (0 produtos) R$ 0,00. -->
+                    <div class="summary-row">
                         <span id="summary-qtd-label">Subtotal (0 produtos)</span>
                         <span id="summary-subtotal">R$ 0,00</span>
                     </div>
@@ -350,10 +336,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- Barra de selo de confiança no rodapé do site-->
         <div class="cart-trust-bar">
             <div class="trust-item">🛡️ <div><strong>Compra segura</strong><span>Seus dados protegidos</span></div>
             </div>
@@ -367,147 +351,505 @@
         </div>
     </div>
 
-<!-- ░░░ PÁGINA: SOBRE ░░░ -->
-<div id="page-sobre" class="page">
-    <nav>
-        <div class="logo" onclick="goTo('page-home')">
-            <img src="logo.png.png" alt="logo" class="nav-logo" />
-            ShopNow
+    <!-- ░░░ PÁGINA: SOBRE ░░░ -->
+    <div id="page-sobre" class="page">
+        <nav>
+            <div class="logo" onclick="goTo('page-home')">
+                <img src="logo.png.png" alt="logo" class="nav-logo">
+                ShopNow
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="goTo('page-home')">Produtos</a>
+                <a href="#" onclick="goTo('page-ofertas')">Ofertas</a>
+                <a href="#" onclick="goTo('page-sobre')" style="color:var(--accent)">Sobre</a>
+                <div class="cart-icon" onclick="irParaCarrinho()">
+                    🛒 <span class="cart-badge" id="cart-count-sobre">0</span>
+                </div>
+                <button class="nav-btn" onclick="sair()">Sair</button>
+            </div>
+        </nav>
+
+        <div class="sobre-hero">
+            <div class="sobre-hero-content">
+                <div class="sobre-tag">Sobre nós</div>
+                <h1>Feito por devs,<br /><span>para devs.</span></h1>
+                <p>A ShopNow nasceu da vontade de unir tecnologia e moda. Somos uma loja criada por estudantes de ADS
+                    apaixonados por código e estilo.</p>
+            </div>
+            <div class="sobre-hero-emoji">👨‍💻</div>
         </div>
-        <div class="nav-links">
-            <a href="#" onclick="goTo('page-home')">Produtos</a>
-            <a href="#">Ofertas</a>
-            <a href="#" onclick="goTo('page-sobre')" style="color:var(--accent)">Sobre</a>
-            <div class="cart-icon" onclick="irParaCarrinho()">
-                🛒 <span class="cart-badge" id="cart-count-sobre">0</span>
+
+        <div class="sobre-section">
+            <div class="sobre-cards-row">
+                <div class="sobre-card">
+                    <div class="sobre-card-icon">🎯</div>
+                    <h3>Nossa Missão</h3>
+                    <p>Oferecer roupas exclusivas para programadores e entusiastas de tecnologia, combinando moda
+                        moderna com identidade do universo dev.</p>
+                </div>
+                <div class="sobre-card">
+                    <div class="sobre-card-icon">⚡</div>
+                    <h3>Nosso Diferencial</h3>
+                    <p>Peças com temas tecnológicos, design moderno e atendimento 24h via suporte. Porque programador
+                        não dorme — e a gente também não.</p>
+                </div>
+                <div class="sobre-card">
+                    <div class="sobre-card-icon">👥</div>
+                    <h3>Nosso Público</h3>
+                    <p>Desenvolvedores, estudantes de TI e qualquer pessoa que ama tecnologia e quer expressar isso com
+                        estilo no dia a dia.</p>
+                </div>
             </div>
-            <button class="nav-btn" onclick="sair()">Sair</button>
         </div>
-    </nav>
 
-    <!-- HERO SOBRE -->
-    <div class="sobre-hero">
-        <div class="sobre-hero-content">
-            <div class="sobre-tag">Sobre nós</div>
-            <h1>Feito por devs,<br /><span>para devs.</span></h1>
-            <p>A ShopNow nasceu da vontade de unir tecnologia e moda. Somos uma loja criada por estudantes de ADS apaixonados por código e estilo.</p>
+        <div class="sobre-section">
+            <div class="sobre-section-title">
+                <h2>Nossa Equipe</h2>
+                <p>O time por trás da ShopNow</p>
+            </div>
+            <div class="equipe-grid">
+                <div class="equipe-card">
+                    <div class="equipe-avatar">👩‍🎨</div>
+                    <div class="equipe-nome">Kelly</div>
+                    <div class="equipe-cargo">UI & UX Design</div>
+                </div>
+                <div class="equipe-card">
+                    <div class="equipe-avatar">👩‍💻</div>
+                    <div class="equipe-nome">Helena Neves</div>
+                    <div class="equipe-cargo">Desenvolvimento Web</div>
+                </div>
+                <div class="equipe-card">
+                    <div class="equipe-avatar">🗄️</div>
+                    <div class="equipe-nome">Rondineli</div>
+                    <div class="equipe-cargo">Banco de Dados</div>
+                </div>
+                <div class="equipe-card">
+                    <div class="equipe-avatar">⚙️</div>
+                    <div class="equipe-nome">Laura</div>
+                    <div class="equipe-cargo">Engenharia de Software</div>
+                </div>
+                <div class="equipe-card">
+                    <div class="equipe-avatar">🧩</div>
+                    <div class="equipe-nome">Vinícius Duarte</div>
+                    <div class="equipe-cargo">Programação Orientada a Objetos com C#</div>
+                </div>
+                <div class="equipe-card">
+                    <div class="equipe-avatar">💬</div>
+                    <div class="equipe-nome">Nicolas Ribeiro</div>
+                    <div class="equipe-cargo">Libras (AVA)</div>
+                </div>
+            </div>
         </div>
-        <div class="sobre-hero-emoji">👨‍💻</div>
-    </div>
 
-    <!-- MISSÃO -->
-    <div class="sobre-section">
-        <div class="sobre-cards-row">
-
-            <div class="sobre-card">
-                <div class="sobre-card-icon">🎯</div>
-                <h3>Nossa Missão</h3>
-                <p>Oferecer roupas exclusivas para programadores e entusiastas de tecnologia, combinando moda moderna com identidade do universo dev.</p>
+        <div class="sobre-section">
+            <div class="sobre-contato">
+                <div class="sobre-contato-icon">✉️</div>
+                <h3>Fale com a gente</h3>
+                <p>Dúvidas, sugestões ou parcerias? Nosso suporte está disponível <strong>24 horas</strong>!</p>
+                <a href="mailto:shopnow2026@gmail.com" class="btn-contato">shopnow2026@gmail.com</a>
             </div>
-
-            <div class="sobre-card">
-                <div class="sobre-card-icon">⚡</div>
-                <h3>Nosso Diferencial</h3>
-                <p>Peças com temas tecnológicos, design moderno e atendimento 24h via suporte. Porque programador não dorme — e a gente também não.</p>
-            </div>
-
-            <div class="sobre-card">
-                <div class="sobre-card-icon">👥</div>
-                <h3>Nosso Público</h3>
-                <p>Desenvolvedores, estudantes de TI e qualquer pessoa que ama tecnologia e quer expressar isso com estilo no dia a dia.</p>
-            </div>
-
         </div>
-    </div>
 
-    <!-- EQUIPE -->
-    <div class="sobre-section">
-        <div class="sobre-section-title">
-            <h2>Nossa Equipe</h2>
-            <p>O time por trás da ShopNow</p>
-        </div>
-        <div class="equipe-grid">
-
-            <div class="equipe-card">
-                <div class="equipe-avatar">👩‍🎨</div>
-                <div class="equipe-nome">Kelly</div>
-                <div class="equipe-cargo">UI & UX Design</div>
+        <div class="sobre-pim">
+            <div class="sobre-pim-inner">
+                <span class="pim-badge">🎓 Projeto Acadêmico</span>
+                <p>A ShopNow é um projeto de PIM desenvolvido pelo curso de <strong>Análise e Desenvolvimento de
+                        Sistemas</strong>. Um estudo prático de desenvolvimento web completo.</p>
             </div>
-
-            <div class="equipe-card">
-                <div class="equipe-avatar">👩‍💻</div>
-                <div class="equipe-nome">Helena Neves</div>
-                <div class="equipe-cargo">Desenvolvimento Web</div>
-            </div>
-
-            <div class="equipe-card">
-                <div class="equipe-avatar">🗄️</div>
-                <div class="equipe-nome">Rondineli</div>
-                <div class="equipe-cargo">Banco de Dados</div>
-            </div>
-
-            <div class="equipe-card">
-                <div class="equipe-avatar">⚙️</div>
-                <div class="equipe-nome">Laura</div>
-                <div class="equipe-cargo">Engenharia de Software</div>
-            </div>
-
-            <div class="equipe-card">
-                <div class="equipe-avatar">🧩</div>
-                <div class="equipe-nome">Vinícius Duarte</div>
-                <div class="equipe-cargo">Programação Orientada a Objetos com C#.</div>
-            </div>
-
-            <div class="equipe-card">
-                <div class="equipe-avatar">💬</div>
-                <div class="equipe-nome">Nicolas Ribeiro</div>
-                <div class="equipe-cargo">Libras (AVA)
-            </div>
-
-        </div>
-    </div>
-
-    <!-- CONTATO -->
-    <div class="sobre-section">
-        <div class="sobre-contato">
-            <div class="sobre-contato-icon">✉️</div>
-            <h3>Fale com a gente</h3>
-            <p>Dúvidas, sugestões ou parcerias? Nosso suporte está disponível <strong>24 horas</strong>!</p>
-            <a href="mailto:shopnow2026@gmail.com" class="btn-contato">shopnow2026@gmail.com</a>
         </div>
     </div>
 
-    <!-- PROJETO PIM -->
-    <div class="sobre-pim">
-        <div class="sobre-pim-inner">
-            <span class="pim-badge">🎓 Projeto Acadêmico</span>
-            <p>A ShopNow é um projeto de PIM desenvolvido pelo curso de <strong>Análise e Desenvolvimento de Sistemas</strong>. Um estudo prático de desenvolvimento web completo.</p>
+    <!-- ░░░ PÁGINA: OFERTAS ░░░ -->
+    <div id="page-ofertas" class="page">
+        <nav>
+            <div class="logo" onclick="goTo('page-home')">
+                <img src="logo.png.png" alt="logo" class="nav-logo">
+                ShopNow
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="goTo('page-home')">Produtos</a>
+                <a href="#" onclick="goTo('page-ofertas')" style="color:var(--accent)">Ofertas</a>
+                <a href="#" onclick="goTo('page-sobre')">Sobre</a>
+                <div class="cart-icon" onclick="irParaCarrinho()">
+                    🛒 <span class="cart-badge" id="cart-count-ofertas">0</span>
+                </div>
+                <button class="nav-btn" onclick="sair()">Sair</button>
+            </div>
+        </nav>
+
+        <div class="oferta-banner">
+            <div class="oferta-banner-bg">
+                <div class="oferta-banner-particle" style="--x:10%;--y:20%;--s:80px;--d:0s"></div>
+                <div class="oferta-banner-particle" style="--x:80%;--y:60%;--s:120px;--d:1s"></div>
+                <div class="oferta-banner-particle" style="--x:50%;--y:80%;--s:60px;--d:0.5s"></div>
+                <div class="oferta-banner-particle" style="--x:90%;--y:10%;--s:100px;--d:1.5s"></div>
+            </div>
+
+            <div class="oferta-banner-content">
+                <div class="oferta-tag-anim">🔥 OFERTA ESPECIAL</div>
+                <h1 class="oferta-banner-title">
+                    50% OFF<br />
+                    <span>na sua 1ª compra</span>
+                </h1>
+                <ul class="oferta-banner-lista">
+                    <li>✅ Desconto aplicado automaticamente</li>
+                    <li>✅ Válido para todos os produtos</li>
+                    <li>✅ Frete grátis acima de R$ 99</li>
+                </ul>
+                <button class="oferta-banner-btn" onclick="goTo('page-home')">Aproveitar agora →</button>
+            </div>
+
+            <div class="oferta-banner-emoji-area">
+                <div class="oferta-emoji-flutuante">👕</div>
+                <div class="oferta-emoji-flutuante">🧥</div>
+                <div class="oferta-emoji-flutuante">💻</div>
+                <div class="oferta-badge-50">50%<br />OFF</div>
+            </div>
+        </div>
+
+        <div class="ofertas-section">
+            <div class="ofertas-section-header">
+                <h2>Produtos em Oferta</h2>
+                <p>50% de desconto na primeira compra — só hoje!</p>
+            </div>
+
+            <div class="ofertas-grid">
+
+                <div class="oferta-card" data-nome="Camiseta Hello World" data-preco="59" data-emoji="👕"
+                    data-desc="Estampa clássica de programação, 100% algodão">
+                    <div class="oferta-badge">-50%</div>
+                    <div class="oferta-img">👕</div>
+                    <div class="oferta-info">
+                        <div class="oferta-nome">Camiseta Hello World</div>
+                        <div class="oferta-desc">Estampa clássica de programação, 100% algodão</div>
+                        <div class="oferta-precos">
+                            <span class="oferta-preco-antigo">R$ 59</span>
+                            <span class="oferta-preco-novo">R$ 29,50</span>
+                        </div>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="oferta-card" data-nome="Moletom GIT PUSH" data-preco="149" data-emoji="🧥"
+                    data-desc="Moletom quentinho com estilo e qualidade">
+                    <div class="oferta-badge">-50%</div>
+                    <div class="oferta-img">🧥</div>
+                    <div class="oferta-info">
+                        <div class="oferta-nome">Moletom GIT PUSH</div>
+                        <div class="oferta-desc">Moletom quentinho com estilo e qualidade</div>
+                        <div class="oferta-precos">
+                            <span class="oferta-preco-antigo">R$ 149</span>
+                            <span class="oferta-preco-novo">R$ 74,50</span>
+                        </div>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="oferta-card" data-nome="Camiseta Bug Free" data-preco="64" data-emoji="👕"
+                    data-desc="Para quem sonha com código sem erros">
+                    <div class="oferta-badge">-50%</div>
+                    <div class="oferta-img">👕</div>
+                    <div class="oferta-info">
+                        <div class="oferta-nome">Camiseta Bug Free</div>
+                        <div class="oferta-desc">Para quem sonha com código sem erros</div>
+                        <div class="oferta-precos">
+                            <span class="oferta-preco-antigo">R$ 64</span>
+                            <span class="oferta-preco-novo">R$ 32,00</span>
+                        </div>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="oferta-card" data-nome="Moletom Stack Overflow" data-preco="170" data-emoji="🧥"
+                    data-desc="Homenagem ao salvador de todo programador">
+                    <div class="oferta-badge">-50%</div>
+                    <div class="oferta-img">🧥</div>
+                    <div class="oferta-info">
+                        <div class="oferta-nome">Moletom Stack Overflow</div>
+                        <div class="oferta-desc">Homenagem ao salvador de todo programador</div>
+                        <div class="oferta-precos">
+                            <span class="oferta-preco-antigo">R$ 170</span>
+                            <span class="oferta-preco-novo">R$ 85,00</span>
+                        </div>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="oferta-card" data-nome="Sem backup, só Jesus salva" data-preco="95" data-emoji="👕"
+                    data-desc="Clássica para quem vive de risco no servidor">
+                    <div class="oferta-badge">-50%</div>
+                    <div class="oferta-img">👕</div>
+                    <div class="oferta-info">
+                        <div class="oferta-nome">Sem backup, só Jesus salva</div>
+                        <div class="oferta-desc">Clássica para quem vive de risco no servidor</div>
+                        <div class="oferta-precos">
+                            <span class="oferta-preco-antigo">R$ 95</span>
+                            <span class="oferta-preco-novo">R$ 47,50</span>
+                        </div>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="oferta-card" data-nome="Deploy Primeiro, Reze Depois" data-preco="99" data-emoji="👕"
+                    data-desc="Para os corajosos que não testam em homologação">
+                    <div class="oferta-badge">-50%</div>
+                    <div class="oferta-img">👕</div>
+                    <div class="oferta-info">
+                        <div class="oferta-nome">Deploy Primeiro, Reze Depois</div>
+                        <div class="oferta-desc">Para os corajosos que não testam em homologação</div>
+                        <div class="oferta-precos">
+                            <span class="oferta-preco-antigo">R$ 99</span>
+                            <span class="oferta-preco-novo">R$ 49,50</span>
+                        </div>
+                        <button class="add-btn" onclick="addCart(this)">+ Adicionar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--PARTE DA POLITICA DE PRIVACIDADE -->
+
+    <!-- ░░░ PÁGINA: POLÍTICA DE PRIVACIDADE ░░░ -->
+    <div id="page-privacidade" class="page">
+        <nav>
+            <div class="logo" onclick="goTo('page-home')">
+                <img src="logo.png.png" alt="logo" class="nav-logo">
+                ShopNow
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="goTo('page-home')">Produtos</a>
+                <a href="#" onclick="goTo('page-ofertas')">Ofertas</a>
+                <a href="#" onclick="goTo('page-sobre')">Sobre</a>
+                <div class="cart-icon" onclick="irParaCarrinho()">
+                    🛒 <span class="cart-badge" id="cart-count-privacidade">0</span>
+                </div>
+                <button class="nav-btn" onclick="sair()">Sair</button>
+            </div>
+        </nav>
+
+        <!-- BANNER PRINCIPAL -->
+        <div class="priv-banner">
+            <div class="priv-banner-left">
+                <div class="priv-banner-icon">🔒</div>
+                <div>
+                    <h1 class="priv-titulo">Política de Privacidade</h1>
+                    <p class="priv-subtitulo"><strong>Sua privacidade é importante para nós.</strong></p>
+                    <p class="priv-desc">Esta Política de Privacidade explica como coletamos, utilizamos,
+                        armazenamos e protegemos suas informações ao acessar nosso site e utilizar nossos serviços.
+                    </p>
+                    <p class="priv-desc">Ao navegar em nossa plataforma, você concorda com os termos descritos nesta
+                        política.</p>
+                </div>
+            </div>
+            <div class="priv-banner-right">🖥️🔐</div>
+        </div>
+
+        <!-- GRID DE SEÇÕES -->
+        <div class="priv-grid">
+
+            <!-- 1. INFORMAÇÕES QUE COLETAMOS -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">1.</span>
+                    <span class="priv-card-titulo">INFORMAÇÕES QUE COLETAMOS</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">📋</div>
+                    <div class="priv-duas-colunas">
+                        <div>
+                            <strong>Dados pessoais</strong>
+                            <ul>
+                                <li>Nome completo</li>
+                                <li>E-mail</li>
+                                <li>Número de telefone</li>
+                                <li>Endereço para entrega</li>
+                                <li>CPF para emissão de nota fiscal</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Dados de navegação</strong>
+                            <ul>
+                                <li>Endereço IP</li>
+                                <li>Tipo de navegador</li>
+                                <li>Tempo de acesso</li>
+                                <li>Páginas visitadas</li>
+                                <li>Cookies e tecnologias semelhantes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. COMO UTILIZAMOS -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">2.</span>
+                    <span class="priv-card-titulo">COMO UTILIZAMOS SUAS INFORMAÇÕES</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">🛒</div>
+                    <ul>
+                        <li>Processar pedidos e pagamentos</li>
+                        <li>Realizar entregas</li>
+                        <li>Melhorar sua experiência no site</li>
+                        <li>Enviar promoções e novidades</li>
+                        <li>Garantir segurança contra fraudes</li>
+                        <li>Oferecer suporte ao cliente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. USO DE COOKIES -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">3.</span>
+                    <span class="priv-card-titulo">USO DE COOKIES</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">🍪</div>
+                    <div>
+                        <p>Utilizamos cookies para:</p>
+                        <ul>
+                            <li>Manter sua sessão ativa</li>
+                            <li>Salvar preferências</li>
+                            <li>Melhorar desempenho do site</li>
+                            <li>Personalizar conteúdos e anúncios</li>
+                        </ul>
+                        <p class="priv-obs">Você pode desativar os cookies nas configurações do seu navegador.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. SEGURANÇA -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">4.</span>
+                    <span class="priv-card-titulo">SEGURANÇA DAS INFORMAÇÕES</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">🛡️</div>
+                    <div>
+                        <p>Adotamos medidas de segurança para proteger seus dados contra:</p>
+                        <ul>
+                            <li>Acessos não autorizados</li>
+                            <li>Alterações indevidas</li>
+                            <li>Vazamentos</li>
+                            <li>Destruição ou perda de informações</li>
+                        </ul>
+                        <p class="priv-obs">Seus dados são armazenados em ambientes seguros e monitorados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. COMPARTILHAMENTO -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">5.</span>
+                    <span class="priv-card-titulo">COMPARTILHAMENTO DE DADOS</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">👥</div>
+                    <div>
+                        <p>A ShopNow não vende seus dados pessoais. As informações poderão ser compartilhadas apenas
+                            com:</p>
+                        <ul>
+                            <li>Empresas de pagamento</li>
+                            <li>Transportadoras</li>
+                            <li>Parceiros logísticos</li>
+                            <li>Autoridades legais quando exigido por lei</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. DIREITOS DO USUÁRIO -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">6.</span>
+                    <span class="priv-card-titulo">DIREITOS DO USUÁRIO</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">👤</div>
+                    <div>
+                        <p>Você pode solicitar a qualquer momento:</p>
+                        <ul>
+                            <li>Acesso aos seus dados</li>
+                            <li>Correção de informações</li>
+                            <li>Exclusão da conta</li>
+                            <li>Cancelamento de comunicações promocionais</li>
+                        </ul>
+                        <p class="priv-obs">Para isso, entre em contato com nossa equipe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. CONTATO -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">7.</span>
+                    <span class="priv-card-titulo">CONTATO</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">✉️</div>
+                    <div>
+                        <p>Em caso de dúvidas sobre esta Política de Privacidade:</p>
+                        <div class="priv-contato-item">
+                            <span>✉️</span>
+                            <a href="mailto:shopnow2026@gmail.com">shopnow2026@gmail.com</a>
+                        </div>
+                        <div class="priv-contato-item">
+                            <span>📞</span>
+                            <a href="tel:+5562981618755">(62) 98161-8755</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. ATUALIZAÇÕES -->
+            <div class="priv-card">
+                <div class="priv-card-header">
+                    <span class="priv-card-num">8.</span>
+                    <span class="priv-card-titulo">ATUALIZAÇÕES DESTA POLÍTICA</span>
+                </div>
+                <div class="priv-card-body">
+                    <div class="priv-card-icon">🔄</div>
+                    <div>
+                        <p>Esta política poderá ser alterada periodicamente para melhorias e adequações legais.</p>
+                        <p class="priv-obs">Última atualização: Maio de 2026.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RODAPÉ DA POLÍTICA -->
+        <div class="priv-footer-msg">
+            <span>🛡️</span>
+            <span>Agradecemos por confiar na ShopNow!</span>
+            <span>🤍</span>
         </div>
     </div>
 
     <footer>
         <div class="footer-logo">
-            <img src="logo.png.png" alt="ShopNow" class="footer-logo-img"/>
+            <img src="logo.png.png" alt="ShopNow" class="footer-logo-img">
             <span> ShopNow</span>
         </div>
-        Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados
+
+        <div class="footer-links">
+            <a href="#" onclick="goTo('page-home')">Início</a>
+            <a href="#" onclick="goTo('page-ofertas')">Ofertas</a>
+            <a href="#" onclick="goTo('page-sobre')">Sobre</a>
+            <a href="#" onclick="goTo('page-contato')">Contato</a>
+            <a href="#" onclick="goTo('page-privacidade')">Política de Privacidade</a>
+        </div>
+
+        Feito com ❤️ · <span>ShopNow</span> © 2026 · Todos os direitos reservados.</p>
     </footer>
-</div>
 
     <div id="toast"></div>
     <script src="script.js"></script>
 </body>
-
 </html>
-
-<!-- VER ERROS NO NAVEGADOR: APERTAR F12 E IR EM "CONSOLE". -->
-<!-- ALTERAÇÕES NO CÓDIGO: DATA-* NOS 6 PRODUTOS
- 2: FUNÇÃO DE CARRINHO NA NAV: ONCLICK DE IRPARAPAGAMENTO PARA IRPARACARRINHO().
- 3: A PAGINJA #page-checkout inteira fopi substituida com o carrinho completo com nav. -->
- <!-- strong deixa os textos em negrito, span é para destacar palavras, p é parágrafo, h1 é título grande, h2 é título médio, h3 é título pequeno. -->
-
-<!--SOBRE CARDS: -->
-    <!--<div class="sobre-card"-->                    <!-- a caixinha -->
-    <!--<div class="sobre-card-icon">🎯</div !-->   <!-- ícone -->
-    <!--<h3>Nossa Missão</h3!-->                   <!-- título -->
-    <!--<p>Oferecer roupas exclusivas...</p>!-->  <!-- texto -->
