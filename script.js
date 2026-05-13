@@ -158,13 +158,17 @@ function atualizarBadge() {
   var badge3 = document.getElementById('cart-count-sobre');
   if (badge3) badge3.textContent = total;
 
-  // PRIVACIDADE
-  var badge4 = document.getElementById('cart-count-privacidade');
+  // OFERTAS
+  var badge4 = document.getElementById('cart-count-ofertas');
   if (badge4) badge4.textContent = total;
 
-  // OFERTAS
-  var badge5 = document.getElementById('cart-count-ofertas');
+  // PRIVACIDADE
+  var badge5 = document.getElementById('cart-count-privacidade');
   if (badge5) badge5.textContent = total;
+
+  // ADMIN
+  var badge6 = document.getElementById('cart-count-admin');
+  if (badge6) badge6.textContent = total;
 }
 
 // ── IR PARA O CARRINHO ──
