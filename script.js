@@ -169,6 +169,10 @@ function atualizarBadge() {
   // ADMIN
   var badge6 = document.getElementById('cart-count-admin');
   if (badge6) badge6.textContent = total;
+
+  // ACESSIBILIDADE
+  var badge7 = document.getElementById('cart-count-libras');
+  if (badge7) badge7.textContent = total;
 }
 
 // ── IR PARA O CARRINHO ──
